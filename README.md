@@ -6,18 +6,24 @@ Live site: www.utsabkatuwal.com.np
 
 ## Features
 
-Responsive UI with dark mode
-Smooth animations (Framer Motion)
-Contact form powered by EmailJS
-Accessible, performant, and mobile-friendly
+• Responsive UI with dark mode
+
+• Smooth animations
+ 
+• Contact form powered by EmailJS
+
+• Accessible, performant, and mobile-friendly
 
 
 ## Tech Stack
 
-React
-Tailwind CSS
-Framer Motion
-EmailJS 
+• React
+
+• Tailwind CSS
+
+• Framer Motion
+
+• EmailJS 
 
 ## License
 Personal project. Adapt as needed.
