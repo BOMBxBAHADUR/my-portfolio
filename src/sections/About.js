@@ -15,14 +15,16 @@ const About = () => {
     {
       degree: 'Masters In Business Administration (MBA)',
       institution: 'Embark College',
+      affiliation: 'University of Roehampton',
       location: 'Pulchowk, Kathmandu',
       period: 'Jul, 2025 - present',
       icon: FiBookOpen
     },
     {
       degree: 'BSc (Hons) Computing',
-      institution: 'London Metropolitan University',
-      location: 'Islington College, Kamalpokhari, Kathmandu',
+      institution: 'Islington College',
+      affiliation: 'London Metropolitan University',
+      location: 'Kamalpokhari, Kathmandu',
       period: 'Nov, 2022 - Jun, 2025',
       icon: FiBookOpen
     }
@@ -121,7 +123,13 @@ const About = () => {
                           <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{education.degree}</h4>
                           <span className="text-sm text-primary-color font-medium">{education.period}</span>
                         </div>
-                        <p className="text-gray-700 dark:text-gray-300 font-medium mb-1">{education.institution}</p>
+                        {/* University / College / Location on separate lines */}
+                        {education.affiliation && (
+                          <p className="text-gray-700 dark:text-gray-300 font-medium mb-1">{education.affiliation}</p>
+                        )}
+                        {education.institution && (
+                          <p className="text-gray-700 dark:text-gray-300 font-medium mb-1">{education.institution},</p>
+                        )}
                         <p className="text-gray-600 dark:text-gray-400 text-sm">{education.location}</p>
                       </div>
                     </div>
