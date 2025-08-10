@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { FiUser, FiMail, FiBookOpen, FiAward } from 'react-icons/fi';
+import { FiUser, FiMail, FiBookOpen } from 'react-icons/fi';
 
 const About = () => {
   const sectionRef = useRef(null);
@@ -13,18 +13,18 @@ const About = () => {
 
   const educationData = [
     {
-      degree: 'BSc (Hons) Computing',
-      institution: 'London Metropolitan University',
-      location: 'Islington College, Kamalpokhari, Kathmandu',
-      period: 'Nov, 2022 - present',
+      degree: 'Masters In Business Administration (MBA)',
+      institution: 'Embark College',
+      location: 'Pulchowk, Kathmandu',
+      period: 'Jul, 2025 - present',
       icon: FiBookOpen
     },
     {
-      degree: 'SLC',
-      institution: 'Prativa Secondary School',
-      location: 'National Examination Board, Pokhara',
-      period: 'Jul, 2020 - Jun, 2022',
-      icon: FiAward
+      degree: 'BSc (Hons) Computing',
+      institution: 'London Metropolitan University',
+      location: 'Islington College, Kamalpokhari, Kathmandu',
+      period: 'Nov, 2022 - Jun, 2025',
+      icon: FiBookOpen
     }
   ];
 
@@ -129,23 +129,6 @@ const About = () => {
                 ))}
               </div>
             </div>
-
-            {/* Certifications Preview */}
-            <motion.div variants={itemVariants} initial="hidden" animate={controls} transition={{ delay: 0.1 }} className="card mt-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  'AWS Cloud Quest: Cloud Practitioner',
-                  'AWS Academy Machine Learning',
-                  'AWS Academy Data Engineering',
-                  'AWS Academy Cloud Foundations'
-                ].map((cert, index) => (
-                  <motion.div key={cert} variants={itemVariants} transition={{ delay: 0.1 + index * 0.06, duration: 0.35 }} className="flex items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                    <div className="w-2 h-2 bg-primary-color rounded-full mr-3" aria-hidden="true"></div>
-                    <span className="text-sm text-gray-700 dark:text-gray-300">{cert}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

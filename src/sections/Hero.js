@@ -160,7 +160,7 @@ const Hero = () => {
               {shouldReduceMotion ? (
                 <div className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
                   <div className="text-sm text-gray-600 dark:text-gray-400">Currently studying</div>
-                  <div className="font-semibold text-primary-color">BSc Computing</div>
+                  <div className="font-semibold text-primary-color">MBA</div>
                 </div>
               ) : (
                 <motion.div
@@ -169,7 +169,7 @@ const Hero = () => {
                   className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg"
                 >
                   <div className="text-sm text-gray-600 dark:text-gray-400">Currently studying</div>
-                  <div className="font-semibold text-primary-color">BSc Computing</div>
+                  <div className="font-semibold text-primary-color">MBA</div>
                 </motion.div>
               )}
             </div>
