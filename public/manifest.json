@@ -1,11 +1,11 @@
 {
-  "short_name": "Utsab Katwal",
-  "name": "Utsab Katwal - Software Developer Portfolio",
+  "short_name": "Utsab Katuwal",
+  "name": "Utsab Katuwal's Portfolio",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "https://utsabkatuwal.com.np/static/media/profilepic.4a8e96735150c57019b9.jpg",
+      "sizes": "any",
+      "type": "image/jpeg"
     }
   ],
   "start_url": ".",

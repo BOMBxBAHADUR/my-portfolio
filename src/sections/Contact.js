@@ -39,7 +39,7 @@ const Contact = () => {
     try {
       // EmailJS template parameters
       const templateParams = {
-        to_name: 'Utsab Katwal',
+        to_name: 'Utsab Katuwal',
         to_email: 'katwalutsab36@gmail.com',
         from_name: formData.name,
         from_email: formData.email,
@@ -155,7 +155,7 @@ const Contact = () => {
                 <div className="flex space-x-4">
                   {[
                     { name: 'GitHub', icon: FiGithub, href: 'https://github.com/BOMBxBAHADUR' },
-                    { name: 'LinkedIn', icon: FiLinkedin, href: 'https://linkedin.com/in/utsab-katwal' },
+                    { name: 'LinkedIn', icon: FiLinkedin, href: 'https://linkedin.com/in/utsab-katuwal' },
                     { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/bomb_x_bahadur/' }
                   ].map((social) => (
                     <motion.a

@@ -91,7 +91,7 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold text-gray-900 dark:text-white"
           >
-            Utsab Katwal
+            Utsab Katuwal
           </motion.div>
 
           {/* Desktop Navigation */}

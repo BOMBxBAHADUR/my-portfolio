@@ -16,7 +16,7 @@ const Hero = () => {
 
   const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/BOMBxBAHADUR', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://linkedin.com/in/utsab-katwal', label: 'LinkedIn' },
+    { icon: FiLinkedin, href: 'https://linkedin.com/in/utsab-katuwal', label: 'LinkedIn' },
     { icon: FaInstagram, href: 'https://www.instagram.com/bomb_x_bahadur/', label: 'Instagram' }
   ];
 
@@ -68,7 +68,7 @@ const Hero = () => {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
             >
               Hi, I'm{' '}
-              <span className="gradient-text">Utsab Katwal</span>
+              <span className="gradient-text">Utsab Katuwal</span>
             </motion.h1>
 
             <motion.p
@@ -143,7 +143,7 @@ const Hero = () => {
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
                 <img 
                   src={profilePic} 
-                  alt="Utsab Katwal" 
+                  alt="Utsab Katuwal" 
                   className="w-full h-full object-cover object-top"
                   style={{ objectPosition: 'center -50px' }}
                   onError={(e) => {

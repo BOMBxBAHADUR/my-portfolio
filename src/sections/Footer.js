@@ -28,7 +28,7 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold mb-4 gradient-text">Utsab Katwal</h3>
+              <h3 className="text-2xl font-bold mb-4 gradient-text">Utsab Katuwal</h3>
               <p className="text-gray-300 dark:text-gray-400 mb-4">
                 A collaborative leader with strong problem-solving skills and expert time management. 
                 Driven by a passion for innovation and continuous improvement.
@@ -36,7 +36,7 @@ const Footer = () => {
               <div className="flex space-x-4">
                 {[
                   { name: 'GitHub', icon: FiGithub, href: 'https://github.com/BOMBxBAHADUR' },
-                  { name: 'LinkedIn', icon: FiLinkedin, href: 'https://linkedin.com/in/utsab-katwal' },
+                  { name: 'LinkedIn', icon: FiLinkedin, href: 'https://linkedin.com/in/utsab-katuwal' },
                   { name: 'Instagram', icon: FaInstagram, href: 'https://www.instagram.com/bomb_x_bahadur/' }
                 ].map((social) => (
                   <motion.a
@@ -108,7 +108,7 @@ const Footer = () => {
                 viewport={{ once: true }}
                 className="text-gray-300 dark:text-gray-400 text-sm mb-4 md:mb-0"
               >
-                © {currentYear} Utsab Katwal. All rights reserved.
+                © {currentYear} Utsab Katuwal. All rights reserved.
               </motion.div>
 
               {/* Made with Love */}
