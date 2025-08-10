@@ -1,4 +1,4 @@
-# GUtsab Katuwal’s Portfolio
+# Utsab Katuwal’s Portfolio
 
 A modern, fast, and responsive portfolio showcasing projects, skills, and contact info.
 
