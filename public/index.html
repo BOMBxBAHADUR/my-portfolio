@@ -20,11 +20,14 @@
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://utsabkatuwal.com.np/" />
+
     <!-- Open Graph / Twitter Card -->
     <meta property="og:title" content="Utsab Katwal - Software Developer Portfolio" />
     <meta property="og:description" content="Explore my projects, skills, and contact information." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="/" />
+    <meta property="og:url" content="https://utsabkatuwal.com.np/" />
     <meta property="og:image" content="/favicon.ico" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Utsab Katwal - Software Developer Portfolio" />
@@ -70,6 +73,26 @@
                 }
             }
         }
+    </script>
+
+    <!-- Analytics (only loads when a real GA4 ID is set; otherwise no-op) -->
+    <script>
+      (function() {
+        var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: replace with your GA4 ID (e.g., G-ABC123XYZ)
+        if (!/^G-[A-Z0-9]+$/.test(GA_MEASUREMENT_ID)) {
+          // No valid GA ID provided; skip loading analytics
+          return;
+        }
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+        document.head.appendChild(gtagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+      })();
     </script>
 </head>
 <body>
