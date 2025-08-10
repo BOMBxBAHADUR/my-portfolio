@@ -12,13 +12,13 @@ Contact form powered by EmailJS
 Accessible, performant, and mobile-friendly
 
 
-### Tech Stack
+## Tech Stack
 
-React 
-Tailwind CSS 
+React
+Tailwind CSS
 Framer Motion
 EmailJS 
 
-### License
+## License
 Personal project. Adapt as needed.
 
