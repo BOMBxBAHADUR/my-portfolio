@@ -7,6 +7,7 @@ import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import './App.css';
+import OpenInBrowserBanner from './components/OpenInBrowserBanner';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <OpenInBrowserBanner />
     </div>
   );
 }
