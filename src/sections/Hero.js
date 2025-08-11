@@ -77,8 +77,8 @@ const Hero = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              A collaborative leader with strong problem-solving skills and expert time management. 
-              Driven by a passion for innovation and continuous improvement.
+              I design and build clean, fast, and accessible web interfaces. I care about delightful UX,
+              readable code, and shipping features that solve real problems.
             </motion.p>
 
             <motion.div

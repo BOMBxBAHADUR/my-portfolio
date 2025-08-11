@@ -45,8 +45,8 @@ const About = () => {
         <motion.div variants={itemVariants} initial="hidden" animate={controls} className="text-center mb-16">
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
-            A collaborative leader with strong problem-solving skills and expert time management. 
-            Known for creative thinking and guiding teams to achieve goals while fostering a positive work environment.
+            I’m a software developer focused on front‑end engineering and user experience. I enjoy
+            turning ideas into polished interfaces, collaborating with teams, and learning fast.
           </p>
         </motion.div>
 
@@ -65,9 +65,8 @@ const About = () => {
               </div>
 
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                Driven by a passion for innovation and continuous improvement, I am a collaborative leader 
-                with strong problem-solving skills and expert time management. Known for creative thinking 
-                and guiding teams to achieve goals while fostering a positive work environment.
+                Recently, I’ve been building modern React interfaces, refining accessibility, and
+                improving performance. I like clear code, small iterations, and shipping value.
               </p>
 
               <div className="space-y-4">
