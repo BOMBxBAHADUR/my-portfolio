@@ -60,13 +60,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1584px; /* ~10% wider than 1440 for a slightly wider layout */
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0; /* rely on px-4 in markup for side padding */
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 6.5rem 0; /* keep comfortable, not exaggerated vertical space */
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease;
 }
@@ -86,8 +86,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1rem;
   color: var(--text-secondary);
   text-align: center;
-  margin-bottom: 3rem;
-  max-width: 600px;
+  margin-bottom: 4rem; /* more spacing under subtitle */
+  max-width: 720px; /* allow wider subtitle lines */
   margin-left: auto;
   margin-right: auto;
 }
@@ -133,10 +133,18 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   background: var(--bg-primary);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 2.25rem; /* roomier cards */
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+}
+
+/* Desktop: increase card padding and grid gaps for a spacious feel */
+@media (min-width: 1024px) {
+  /* keep card padding moderate; let width, not padding, provide space */
+  .card { padding: 2.25rem; }
+  /* do not force a global grid gap; let per-section classes control it */
+  .container { max-width: 1584px; }
 }
 
 .card:hover {
@@ -361,6 +369,19 @@ h1, h2, h3, h4, h5, h6 {
   .card {
     padding: 1.25rem;
   }
+}
+
+
+html {
+  font-size: 16px;
+}
+
+/* Scale up base size on larger screens for more open layout */
+@media (min-width: 1024px) {
+  html { font-size: 16px; } /* no zooming text on desktop */
+}
+@media (min-width: 1536px) {
+  html { font-size: 16px; }
 }
 
 /* Fix iOS zoom on inputs by setting base font-size */

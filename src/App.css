@@ -31,6 +31,19 @@
 /* Keep content above ::before */
 .site-gradient > * { position: relative; z-index: 1; }
 
+/* Global typography tweaks for a more open feel */
+h1, h2 {
+  letter-spacing: 0.01em;
+}
+
+/* Space out stacked sections slightly more on large screens */
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
 /* Smooth scrolling for the entire app */
 html {
   scroll-behavior: smooth;
