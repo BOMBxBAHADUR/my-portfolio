@@ -33,12 +33,23 @@ const Skills = () => {
       ]
     },
     {
+      title: 'Business & Management',
+      icon: FiTrendingUp,
+      skills: [
+        { name: 'Project Management', level: 85, color: '#0ea5e9' },
+        { name: 'Business Strategy', level: 80, color: '#14b8a6' },
+        { name: 'Data-Driven Decisions', level: 78, color: '#f59e0b' },
+        { name: 'Financial Literacy', level: 72, color: '#22c55e' },
+        { name: 'Marketing Fundamentals', level: 75, color: '#a855f7' }
+      ]
+    },
+    {
       title: 'Soft Skills',
       icon: FiUsers,
       skills: [
-        { name: 'Adaptability', level: 95, color: '#10B981' },
+        { name: 'Communication', level: 92, color: '#10B981' },
         { name: 'Leadership', level: 85, color: '#6366F1' },
-        { name: 'Team Work', level: 90, color: '#F59E0B' },
+        { name: 'Team Collaboration', level: 90, color: '#F59E0B' },
         { name: 'Time Management', level: 88, color: '#EF4444' }
       ]
     }

@@ -71,16 +71,6 @@ const Hero = () => {
               <span className="gradient-text">Utsab Katuwal</span>
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0"
-            >
-              I design and build clean, fast, and accessible web interfaces. I care about delightful UX,
-              readable code, and shipping features that solve real problems.
-            </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
