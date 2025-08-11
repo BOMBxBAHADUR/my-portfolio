@@ -6,6 +6,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
 
 :root {
   --primary-color: #6366f1;
@@ -363,9 +365,7 @@ img, video { max-width: 100%; height: auto; }
     font-size: 2rem;
   }
   
-  .container {
-    padding: 0 1rem;
-  }
+  .container { padding: 0 0.75rem; }
 }
 
 @media (max-width: 480px) {
@@ -381,6 +381,12 @@ img, video { max-width: 100%; height: auto; }
 
 html {
   font-size: 16px;
+  overflow-x: hidden; /* prevent root overflow that iOS can still scroll */
+}
+
+/* Ensure body never exceeds viewport on small devices (iOS gap fix) */
+@media (max-width: 480px) {
+  body { width: 100vw; position: relative; }
 }
 
 /* Scale up base size on larger screens for more open layout */
