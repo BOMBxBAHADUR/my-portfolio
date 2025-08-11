@@ -79,10 +79,10 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/85 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 ${
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/85 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 ${
         isScrolled ? 'shadow-md' : 'shadow-sm'
       }`}
-      style={{ width: '100%', overflowX: 'hidden' }}
+  style={{ width: '100%', overflowX: 'hidden', maxWidth: '100vw' }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
