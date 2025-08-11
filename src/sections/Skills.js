@@ -33,17 +33,6 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Business & Management',
-      icon: FiTrendingUp,
-      skills: [
-        { name: 'Project Management', level: 85, color: '#0ea5e9' },
-        { name: 'Business Strategy', level: 80, color: '#14b8a6' },
-        { name: 'Data-Driven Decisions', level: 78, color: '#f59e0b' },
-        { name: 'Financial Literacy', level: 72, color: '#22c55e' },
-        { name: 'Marketing Fundamentals', level: 75, color: '#a855f7' }
-      ]
-    },
-    {
       title: 'Soft Skills',
       icon: FiUsers,
       skills: [
@@ -127,11 +116,15 @@ const Skills = () => {
                 { name: 'Problem Solving', icon: '🧩' },
                 { name: 'Creative Thinking', icon: '💡' },
                 { name: 'Project Management', icon: '📊' },
-                { name: 'Communication', icon: '💬' },
-                { name: 'Analytical Skills', icon: '📈' },
-                { name: 'Innovation', icon: '🚀' },
+                { name: 'Business Strategy', icon: '📈' },
+                { name: 'Data-Driven Decisions', icon: '📊' },
+                { name: 'Financial Literacy', icon: '💵' },
+                { name: 'Marketing Fundamentals', icon: '📢' },
                 { name: 'Collaboration', icon: '🤝' },
-                { name: 'Continuous Learning', icon: '📚' }
+                { name: 'Continuous Learning', icon: '📚' },
+                { name: 'Communication', icon: '💬' },
+                { name: 'Innovation', icon: '🚀' },
+                { name: 'Analytical Skills', icon: '📊' }
               ].map((skill) => (
                 <motion.div
                   key={skill.name}
