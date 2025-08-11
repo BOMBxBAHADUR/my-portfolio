@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 // Detect common in-app browsers (Facebook, Instagram, Twitter, TikTok, Snapchat, etc.)
 const isInAppBrowser = (ua) => /FBAN|FBAV|Instagram|Line|MicroMessenger|Twitter|TikTok|Pinterest|OKHTTP|Snapchat/i.test(ua);
@@ -18,6 +18,30 @@ export default function OpenInBrowserBanner() {
   const [copied, setCopied] = useState(false);
   const [ua, setUa] = useState('');
 
+  const tryOpenExternal = useCallback(() => {
+    const href = window.location.href;
+    const uaLocal = navigator.userAgent || '';
+    try {
+      if (isAndroid(uaLocal)) {
+        // 1) Try Chrome intent
+        const noScheme = href.replace(/^https?:\/\//, '');
+        const intentUrl = `intent://${noScheme}#Intent;scheme=https;package=com.android.chrome;end`;
+        window.location.href = intentUrl;
+        // 2) Fallback: googlechrome scheme
+        setTimeout(() => {
+          try { window.location.href = `googlechrome://navigate?url=${encodeURIComponent(href)}`; } catch (_) {}
+        }, 400);
+        // 3) Last fallback: open new tab (some in-app allow this)
+        setTimeout(() => { try { window.open(href, '_blank', 'noopener'); } catch (_) {} }, 800);
+      } else {
+        // iOS: cannot auto-escape; opening new tab keeps you in in-app webview
+        try { window.open(href, '_blank', 'noopener'); } catch (_) {}
+      }
+    } catch (_) {
+      // ignore
+    }
+  }, []);
+
   useEffect(() => {
     try {
       const u = navigator.userAgent || '';
@@ -33,7 +57,7 @@ export default function OpenInBrowserBanner() {
     } catch (_) {
       // ignore
     }
-  }, []);
+  }, [tryOpenExternal]);
 
   const copyLink = async () => {
     try {
@@ -62,29 +86,6 @@ export default function OpenInBrowserBanner() {
       }
     } catch (_) {
       // user cancelled or unsupported
-    }
-  };
-
-  const tryOpenExternal = () => {
-    const href = window.location.href;
-    try {
-      if (isAndroid(ua)) {
-        // 1) Try Chrome intent
-        const noScheme = href.replace(/^https?:\/\//, '');
-        const intentUrl = `intent://${noScheme}#Intent;scheme=https;package=com.android.chrome;end`;
-        window.location.href = intentUrl;
-        // 2) Fallback: googlechrome scheme
-        setTimeout(() => {
-          try { window.location.href = `googlechrome://navigate?url=${encodeURIComponent(href)}`; } catch (_) {}
-        }, 400);
-        // 3) Last fallback: open new tab (some in-app allow this)
-        setTimeout(() => { try { window.open(href, '_blank', 'noopener'); } catch (_) {} }, 800);
-      } else {
-        // iOS: cannot auto-escape; opening new tab keeps you in-app.
-        try { window.open(href, '_blank', 'noopener'); } catch (_) {}
-      }
-    } catch (_) {
-      // ignore
     }
   };
 
