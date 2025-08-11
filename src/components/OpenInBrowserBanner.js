@@ -1,26 +1,39 @@
 import React, { useEffect, useState } from 'react';
 
-// Detect common in-app browsers (Facebook, Instagram, Twitter, TikTok, etc.)
-const isInAppBrowser = (ua) => /FBAN|FBAV|Instagram|Line|MicroMessenger|Twitter|TikTok|Pinterest|OKHTTP/i.test(ua);
+// Detect common in-app browsers (Facebook, Instagram, Twitter, TikTok, Snapchat, etc.)
+const isInAppBrowser = (ua) => /FBAN|FBAV|Instagram|Line|MicroMessenger|Twitter|TikTok|Pinterest|OKHTTP|Snapchat/i.test(ua);
 const isIOS = (ua) => /iPad|iPhone|iPod/i.test(ua);
 const isAndroid = (ua) => /Android/i.test(ua);
+
+function getAppName(ua) {
+  if (/Instagram/i.test(ua)) return 'Instagram';
+  if (/FBAN|FBAV/i.test(ua)) return 'Facebook';
+  if (/TikTok/i.test(ua)) return 'TikTok';
+  if (/Snapchat/i.test(ua)) return 'Snapchat';
+  return 'this app';
+}
 
 export default function OpenInBrowserBanner() {
   const [show, setShow] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [ua, setUa] = useState('');
 
   useEffect(() => {
     try {
-      const ua = navigator.userAgent || '';
-      if (isInAppBrowser(ua)) {
+      const u = navigator.userAgent || '';
+      setUa(u);
+      const inApp = isInAppBrowser(u);
+      if (inApp) {
         setShow(true);
+        // Best-effort: on Android, try to escape in-app browser automatically
+        if (isAndroid(u)) {
+          setTimeout(() => tryOpenExternal(), 300);
+        }
       }
     } catch (_) {
       // ignore
     }
   }, []);
-
-  if (!show) return null;
 
   const copyLink = async () => {
     try {
@@ -40,24 +53,49 @@ export default function OpenInBrowserBanner() {
     }
   };
 
-  const openExternal = () => {
+  const shareLink = async () => {
     try {
-      const ua = navigator.userAgent || '';
-      const href = window.location.href;
-      if (isAndroid(ua)) {
-        const urlNoScheme = href.replace(/^https?:\/\//, '');
-        const intentUrl = `intent://${urlNoScheme}#Intent;scheme=https;package=com.android.chrome;end`;
-        window.location.href = intentUrl;
-        setTimeout(() => {
-          window.open(href, '_blank', 'noopener');
-        }, 500);
+      if (navigator.share) {
+        await navigator.share({ title: document.title, url: window.location.href });
       } else {
-        window.open(href, '_blank', 'noopener');
+        await copyLink();
       }
     } catch (_) {
-      window.open(window.location.href, '_blank', 'noopener');
+      // user cancelled or unsupported
     }
   };
+
+  const tryOpenExternal = () => {
+    const href = window.location.href;
+    try {
+      if (isAndroid(ua)) {
+        // 1) Try Chrome intent
+        const noScheme = href.replace(/^https?:\/\//, '');
+        const intentUrl = `intent://${noScheme}#Intent;scheme=https;package=com.android.chrome;end`;
+        window.location.href = intentUrl;
+        // 2) Fallback: googlechrome scheme
+        setTimeout(() => {
+          try { window.location.href = `googlechrome://navigate?url=${encodeURIComponent(href)}`; } catch (_) {}
+        }, 400);
+        // 3) Last fallback: open new tab (some in-app allow this)
+        setTimeout(() => { try { window.open(href, '_blank', 'noopener'); } catch (_) {} }, 800);
+      } else {
+        // iOS: cannot auto-escape; opening new tab keeps you in-app.
+        try { window.open(href, '_blank', 'noopener'); } catch (_) {}
+      }
+    } catch (_) {
+      // ignore
+    }
+  };
+
+  const openExternal = () => {
+    tryOpenExternal();
+  };
+
+  if (!show) return null;
+
+  const onIOS = isIOS(ua);
+  const appName = getAppName(ua);
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4">
@@ -66,9 +104,15 @@ export default function OpenInBrowserBanner() {
           <div className="flex-1 text-sm leading-5 text-gray-200">
             <p className="font-semibold mb-1">Open in your browser</p>
             <p className="text-gray-300">
-              You&apos;re viewing this inside an app&apos;s webview. For the best experience, open it
-              in your default browser{isIOS(navigator.userAgent) ? ' (Safari)' : ''}.
+              You&apos;re in {appName}&apos;s in‑app browser. For the best experience, open this in your default browser{onIOS ? ' (Safari)' : ''}.
             </p>
+            {onIOS && (
+              <ul className="text-gray-400 mt-2 text-xs list-disc pl-5 space-y-1">
+                <li>Tap the ••• or Share button.</li>
+                <li>Choose “Open in Browser” or “Open in Safari”.</li>
+                <li>If not visible, tap Share and pick Safari from the options.</li>
+              </ul>
+            )}
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -77,6 +121,14 @@ export default function OpenInBrowserBanner() {
             >
               Open in Browser
             </button>
+            {onIOS && (
+              <button
+                onClick={shareLink}
+                className="px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-sm"
+              >
+                Share
+              </button>
+            )}
             <button
               onClick={copyLink}
               className="px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-sm"
