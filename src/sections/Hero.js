@@ -23,7 +23,7 @@ const Hero = () => {
   return (
   <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Background Elements */}
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 max-w-full overflow-hidden"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
       
       {/* Floating Elements */}
       {!shouldReduceMotion && (
@@ -31,12 +31,12 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-24 md:top-20 left-6 md:left-10 w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-10 md:opacity-20 blur-xl max-w-[100vw]"
+            className="absolute top-24 md:top-20 left-6 md:left-10 w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-10 md:opacity-20 blur-xl"
           />
           <motion.div
             animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-24 md:bottom-20 right-6 md:right-10 w-32 h-32 bg-gradient-to-r from-pink-400 to-orange-400 rounded-full opacity-10 md:opacity-20 blur-xl max-w-[100vw]"
+            className="absolute bottom-24 md:bottom-20 right-6 md:right-10 w-32 h-32 bg-gradient-to-r from-pink-400 to-orange-400 rounded-full opacity-10 md:opacity-20 blur-xl"
           />
         </>
       )}

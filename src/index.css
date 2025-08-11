@@ -144,8 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Defensive: ensure images and videos never cause overflow */
 img, video { max-width: 100%; height: auto; }
 
-/* Ensure sections do not expand wider than viewport on small devices */
-section { max-width: 100vw; }
+/* Removed section max-width cap to avoid iOS side gaps */
 
 /* Desktop: increase card padding and grid gaps for a spacious feel */
 @media (min-width: 1024px) {
