@@ -16,9 +16,7 @@ const Skills = () => {
       title: 'Programming Languages',
       icon: FiCode,
       skills: [
-        { name: 'HTML', level: 95, color: '#E34F26' },
-        { name: 'CSS', level: 95, color: '#1572B6' },
-        { name: 'JavaScript', level: 95, color: '#F7DF1E' },
+        { name: 'HTML, CSS & JavaScript', level: 95, color: '#6366F1' },
         { name: 'Python', level: 85, color: '#3776AB' },
         { name: '.NET', level: 70, color: '#512BD4' }
       ]
