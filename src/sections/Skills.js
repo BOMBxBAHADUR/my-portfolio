@@ -16,11 +16,11 @@ const Skills = () => {
       title: 'Programming Languages',
       icon: FiCode,
       skills: [
-        { name: 'HTML', level: 90, color: '#E34F26' },
-        { name: 'CSS', level: 85, color: '#1572B6' },
-        { name: 'JavaScript', level: 80, color: '#F7DF1E' },
-        { name: 'Python', level: 75, color: '#3776AB' },
-        { name: 'Java', level: 70, color: '#ED8B00' }
+        { name: 'HTML', level: 95, color: '#E34F26' },
+        { name: 'CSS', level: 95, color: '#1572B6' },
+        { name: 'JavaScript', level: 95, color: '#F7DF1E' },
+        { name: 'Python', level: 85, color: '#3776AB' },
+        { name: '.NET', level: 70, color: '#512BD4' }
       ]
     },
     {
@@ -29,7 +29,8 @@ const Skills = () => {
       skills: [
         { name: 'Photoshop', level: 85, color: '#31A8FF' },
         { name: 'Canva', level: 90, color: '#00C4CC' },
-        { name: 'WordPress', level: 80, color: '#21759B' }
+        { name: 'WordPress', level: 80, color: '#21759B' },
+        { name: 'Anaconda', level: 70, color: '#44A833' }
       ]
     },
     {
